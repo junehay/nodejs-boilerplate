@@ -34,6 +34,7 @@ app.use((req: Request, res: Response) => {
 });
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+  console.log('err : ', err);
   logger.error(err);
   res.status(500).json({
     message: err.message || 'ERR_UNKNOWN_ERROR'
